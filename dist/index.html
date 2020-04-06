@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <link rel="stylesheet" type="text/css" href="static/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+  <div class="view-root">
+    <header>
+      <button class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="search-container">
+        <div class="input-container-search">
+          <span><i class="fas fa-search"></i></span><input id="search-input" type="text" placeholder="Under Construction">
+        </div>
+      </div>
+    </header>
+    <div class="menu">
+        <ul class="lists">
+          <li class="all-tasks menu-item">
+            <span><i class="fas fa-check-double"></i></span>
+            <span class="text">Tasks</span>
+          </li>
+          <div class="break"></div>
+          <li class="new-projects menu-item">
+            <form onsubmit="return false">
+              <label for="newProject"><span><i class="fas fa-tasks"></i></span></label>
+              <span class="add-container">
+                <input id="newProject" type="text" placeholder="New Project">
+                <i class="submit-btn fas fa-plus"></i>
+              </span>
+            </form>
+          </li>
+      </ul>
+      </div>
+      <div data-project="none" class="viewer">
+
+        <div class="task-header">
+          <h3>Create a New Project or Add a New Task</h3>
+        </div>
+        <div class="empty-tasks-container">
+        <img class="empty-project-img reveal" src="static/imgs/undraw_certification_aif8.svg" alt="">
+        <h3>Nothing Here Yet</h3>
+        </div>
+    </div>
+    <div class="input-container-task">
+      <form onsubmit="return false">
+        <input id="newTask" type="text" placeholder="Enter Task"><span class="task-submit-btn"><i class="fas fa-arrow-up"></i></span>
+      </form>
+    </div>
+  </div>
+</body>
+<script src="main.js"></script>
+<script src="https://kit.fontawesome.com/df40b23e64.js" crossorigin="anonymous"></script>
+</html>
