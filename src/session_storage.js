@@ -2,21 +2,21 @@ import {populateMenu} from './dom_population'
 import {deleteProjectListener, projectViewListener} from './events'
 
 function updateStorage(sessionArr = '', arr){
-  return sessionStorage.setItem(sessionArr, JSON.stringify(arr));
+  return localStorage.setItem(sessionArr, JSON.stringify(arr));
 }
 
 function retrieveStorage(){
-  if(sessionStorage.projectArr.length == 0){
+  if(localStorage.projectArr.length == 0){
     let newArray = new Array();
     return newArray;
   } else {
-    let a = JSON.parse(sessionStorage.getItem('projectArr'));
+    let a = JSON.parse(localStorage.getItem('projectArr'));
     return a;
   }
 }
 
 function loadStorage(){
-  if(!sessionStorage.projectArr){
+  if(!localStorage.projectArr){
     createStorage();
   } else {
     let currentStorage = retrieveStorage();
@@ -29,7 +29,7 @@ function loadStorage(){
 }
 
 function createStorage(){
-  return sessionStorage.setItem('projectArr', "");
+  return localStorage.setItem('projectArr', "");
 }
 
 
