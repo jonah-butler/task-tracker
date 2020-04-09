@@ -16,21 +16,9 @@ const taskSubmitBtn = document.querySelector('.task-submit-btn')
   hamburger.addEventListener('click', () => {
     let viewer = document.querySelector('.viewer');
     let menu = document.querySelector('.menu');
-    let text = document.querySelectorAll('.text');
-    let taskInput = document.querySelector('.input-container-task');
-    let icons = document.querySelectorAll('.menu > .fas');
-    let addProjectInput = document.querySelector('#newProject');
 
-    addProjectInput.classList.toggle('displayToggle');
     viewer.classList.toggle('displayToggle');
     menu.classList.toggle('displayToggle');
-    taskInput.classList.toggle('displayToggle');
-    nodeListLoop(text).forEach((node) => {
-      node.classList.toggle('displayToggle');
-     })
-    nodeListLoop(icons).forEach((node) => {
-      node.classList.toggle('displayToggle');
-     })
   })
 }
 
