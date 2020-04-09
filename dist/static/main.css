@@ -5,6 +5,31 @@ body{
   font-family: 'Roboto';
 }
 
+@media (min-width: 300px) and (max-width: 800px) {
+  .menu{
+    position: absolute !important;
+    left: -300px;
+    width: 0px;
+    z-index: 99999;
+  }
+  .right-container{
+    width: 100% !important;
+  }
+  .menu-toggle{
+    display: flex !important;
+  }
+
+}
+
+@media (min-width: 801px) and (max-width: 850px){
+  .menu{
+    width: 250px;
+  }
+  .right-container{
+    width: calc(100% - 250px) !important;
+  }
+}
+
 ul{
   padding: 0;
   margin: 0;
@@ -32,8 +57,19 @@ h4{
 .view-root{
   width: 100%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+.below-header{
+  display: flex;
+  flex-direction: row;
+}
+
+.right-container{
+  width: calc(100% - 300px);
+  position: relative;
+}
 
 .menu-toggle{
   background: none;
@@ -41,7 +77,7 @@ h4{
   height: 100%;
   width: 54px;
   font-size: 35px;
-  display: flex;
+  display: none;
   padding: 10px;
   cursor: pointer;
 }
@@ -147,27 +183,38 @@ input[type="text"]{
 .menu{
   position: relative;
   height: calc(100vh - 60px);
+  max-width: 300px;
   overflow: scroll;
   background: #fff;
-  width: 300px;
+  /* width: 300px; */
   border-right: 1px solid #eee;
   box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
-  float: left;
+  /* float: left; */
   transition: all .3s ease;
 }
 
 .menu.displayToggle{
-  width: 80px;
+
+  width: 400px;
+  left: 0;
 }
 
-.viewer.displayToggle{
+.text.displayToggle{
+  display: none;
+}
+
+.fas.displayToggle{
+  font-size: 40px;
+}
+
+/* .viewer.displayToggle{
   width: calc(100% - 130px);
-}
+} */
 
-.input-container-task.displayToggle{
+/* .input-container-task.displayToggle{
   width: calc(100% - 130px) !important;
   margin-left: 100px;
-}
+} */
 
 #newProject.displayToggle{
   display: none;
@@ -208,17 +255,10 @@ li > span{
   transition: all .5s ease;
 }
 
-.text.displayToggle{
-  display: none;
-}
-
 .fas{
   transition: all .5s ease;
 }
 
-.fas.displayToggle{
-  font-size: 40px;
-}
 
 .all-tasks .fa-check-double{
   color: #ffa41b;
@@ -257,10 +297,10 @@ Viewer styles
 
 
 .viewer{
-  width: calc(100% - 355px);
+  /* width: 98%; */
   height: calc(100vh - 100px);
   background: #fff;
-  float: left;
+  /* float: left; */
   margin: 20px;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
   transition: all .3s ease;
@@ -291,10 +331,10 @@ Viewer styles
 .input-container-task{
   position: absolute;
   bottom: 0;
+  width: calc(100% - 40px);
   left: 0;
-  width: calc(100% - 355px);
-  margin-left: 320px;
-  z-index: 99999;
+  margin-left: 20px;
+  z-index: 999;
   overflow: hidden;
   box-shadow: 0px 0px 8px rgba(0,0,0,0.5);
   transition: all .3s ease;
@@ -335,7 +375,6 @@ Viewer styles
 }
 
 .task-header{
-  width: 100%;
   height: 40px;
   padding: 20px;
   animation: fadeIn .3s;
