@@ -16,9 +16,16 @@ const taskSubmitBtn = document.querySelector('.task-submit-btn')
   hamburger.addEventListener('click', () => {
     let viewer = document.querySelector('.viewer');
     let menu = document.querySelector('.menu');
-
     viewer.classList.toggle('displayToggle');
     menu.classList.toggle('displayToggle');
+
+    let listsSection = document.querySelector('.lists');
+    listsSection.addEventListener("click", (e) => {
+      if(e.target.id != 'newProject'){
+        viewer.classList.remove('displayToggle');
+        menu.classList.remove('displayToggle');
+      }
+    })
   })
 }
 
