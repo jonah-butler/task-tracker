@@ -18,6 +18,10 @@ body{
   .menu-toggle{
     display: flex !important;
   }
+  .fa-times-circle{
+    transform: translateX(0px) !important;
+    opacity: 1 !important;
+  }
 
 }
 
