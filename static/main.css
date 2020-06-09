@@ -354,7 +354,7 @@ Viewer styles
   border: 2px solid #ff5151;
   border-right: none;
   height: 25px;
-  width: calc(100% - 23px);
+  width: calc(100% - 25px);
 }
 
 .task-submit-btn{
